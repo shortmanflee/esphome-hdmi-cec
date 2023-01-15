@@ -37,9 +37,9 @@ void HdmiCec::OnReady(int logical_address) {
   ESP_LOGD(TAG, "Device ready, Logical address assigned: %d", logical_address);
   this->address_ = logical_address;
   // Report physical address
-  unsigned char buf[4] = {0x84, (unsigned char) (physical_address_ >> 8), (unsigned char) (physical_address_ & 0xff),
-                          address_};
-  this->send_data_internal_(this->address_, 0xF, buf, 4);
+  //unsigned char buf[4] = {0x84, (unsigned char) (physical_address_ >> 8), (unsigned char) (physical_address_ & 0xff),
+  //                        address_};
+  //this->send_data_internal_(this->address_, 0xF, buf, 4);
 }
 
 void HdmiCec::OnReceiveComplete(unsigned char *buffer, int count, bool ack) {
