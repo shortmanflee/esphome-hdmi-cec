@@ -34,7 +34,7 @@ void HdmiCec::SetLineState(bool state) {
 
 void HdmiCec::OnReady(int logical_address) {
   // This is called after the logical address has been allocated
-  ESP_LOGD(TAG, "Device ready, Logical address assigned: %d", logical_address);
+  ESP_LOGD(TAG, "Device ready TEST1, Logical address assigned: %d", logical_address);
   this->address_ = logical_address;
   // Report physical address
   //unsigned char buf[4] = {0x84, (unsigned char) (physical_address_ >> 8), (unsigned char) (physical_address_ & 0xff),
