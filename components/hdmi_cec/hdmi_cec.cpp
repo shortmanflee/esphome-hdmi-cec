@@ -66,12 +66,12 @@ void HdmiCec::OnReceiveComplete(unsigned char *buffer, int count, bool ack) {
 
   // Handling the physical address response in code instead of yaml since I think it always
   // needs to happen for other devices to be able to talk to this device.
-  if (buffer[0] == 0x83 && destination == address_) {
+  //if (buffer[0] == 0x83 && destination == address_) {
     // Report physical address
-    unsigned char buf[4] = {0x84, (unsigned char) (physical_address_ >> 8), (unsigned char) (physical_address_ & 0xff),
-                            address_};
-    this->send_data_internal_(this->address_, 0xF, buf, 4);
-  }
+    //unsigned char buf[4] = {0x84, (unsigned char) (physical_address_ >> 8), (unsigned char) (physical_address_ & 0xff),
+    //                        address_};
+    //this->send_data_internal_(this->address_, 0xF, buf, 4);
+  //}
 
   uint8_t opcode = buffer[0];
   for (auto *trigger : this->triggers_) {
